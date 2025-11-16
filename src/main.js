@@ -14,3 +14,29 @@
       <p>Текст</p>
   </li>
 */
+
+import { onFormSubmit, onTaskDelete, attachValidationListeners } from "./js/handlers";
+import { refs } from "./js/refs";
+import localStorageApi from "./js/local-storage-api";
+import { renderTasks } from "./js/render-tasks";
+import { initTheme, toggleTheme } from "./js/theme-switcher";
+
+initTheme();
+
+localStorageApi.initTasks();
+renderTasks(localStorageApi.getTasks());
+
+// function initApp() {
+//   initTheme();
+//   localStorageApi.initTasks();
+//   renderTasks(localStorageApi.getTasks());
+// }
+
+// initApp();
+
+
+refs.form.addEventListener('submit', onFormSubmit);
+refs.tasksList.addEventListener("click", onTaskDelete);
+refs.themeToggle.addEventListener("click", toggleTheme);
+
+attachValidationListeners();

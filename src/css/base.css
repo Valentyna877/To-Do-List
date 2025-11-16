@@ -21,7 +21,78 @@ section {
   padding: 10px;
   gap: 10px;
   /* background-color: #32becb; */
-  color: rgba(255, 255, 255);
+  /* color: rgba(255, 255, 255); */
+}
+
+/* .empty-message {
+  text-align: center;
+  font-style: italic;
+  color: #666;
+  margin-top: 1rem;
+} */
+
+.empty-message {
+  text-align: center;
+  font-style: italic;
+  color: #999;
+  margin-top: 1rem;
+  animation: fadeIn 0.5s ease-in;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+.input-error {
+  border: 2px solid red;
+  background-color: #ffe6e6;
+}
+
+.error-message {
+  /* display: block; */
+  /* color: red; */
+  /* font-size: 0.9rem;
+    transition: color 0.3s ease; */
+  /* margin-top: 4px; */
+  font-size: 0.9rem;
+  /* margin-top: 4px; */
+  display: flex;
+  /* щоб іконка й текст були в ряд */
+  align-items: center;
+  gap: 6px;
+  /* відступ між іконкою та текстом */
+  transition: color 0.3s ease;
+}
+
+/* 
+.error-message::before {
+  content: "⚠️";
+  font-size: 1rem;
+} */
+
+/* Для світлої теми */
+body.theme-light .error-message {
+  color: #d32f2f;
+  font-weight: 500;
+  /* насичений червоний */
+}
+
+/* Для темної теми */
+body.theme-dark .error-message {
+  color: #ff6b6b;
+  /* яскравіший червоний для контрасту */
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  /* margin-bottom: 12px; */
 }
 
 .task-list-item-btn {
